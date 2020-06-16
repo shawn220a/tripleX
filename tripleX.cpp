@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 
 void PrintIntroduction(int Difficulty)
 {
@@ -10,7 +11,7 @@ bool PlayGame(int Difficulty)
 {
   PrintIntroduction(Difficulty);
 
-  int Multiplier = Difficulty + 1;
+  int Multiplier = Difficulty + Difficulty;
 
   const int CodeA = rand() % Multiplier;
   const int CodeB = rand() % Multiplier;
@@ -45,6 +46,8 @@ bool PlayGame(int Difficulty)
 
 int main()
 {
+  srand(time(NULL));
+
   int LevelDifficulty = 1;
   const int FinalLevel = 15;
 
