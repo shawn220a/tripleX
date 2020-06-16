@@ -10,9 +10,9 @@ bool PlayGame(int Difficulty)
 {
   PrintIntroduction(Difficulty);
 
-  const int CodeA = 4;
-  const int CodeB = 3;
-  const int CodeC = 2;
+  const int CodeA = rand();
+  const int CodeB = rand();
+  const int CodeC = rand();
 
   const int CodeSum = CodeA + CodeB + CodeC;
   const int CodeProduct = CodeA * CodeB * CodeC;
@@ -31,12 +31,12 @@ bool PlayGame(int Difficulty)
 
   if (GuessSum == CodeSum && GuessProduct == CodeProduct)
   {
-    std::cout << "\nYou Win!";
+    std::cout << "\nYou Win! Get ready for the next level.";
     return true;
   }
   else
   {
-    std::cout << "\nYou Lose!";
+    std::cout << "\nYou Lose! Please retry the level.";
     return false;
   }
 }
@@ -44,8 +44,9 @@ bool PlayGame(int Difficulty)
 int main()
 {
   int LevelDifficulty = 1;
+  const int FinalLevel = 15;
 
-  while (true)
+  while (LevelDifficulty <= FinalLevel)
   {
     bool bLevelComplete = PlayGame(LevelDifficulty);
     std::cin.clear();  // Clears any errors
@@ -56,6 +57,8 @@ int main()
       ++LevelDifficulty;
     }
   }
+
+  std::cout << "Congratulations on beating the game!\n";
 
   return 0;
 }
