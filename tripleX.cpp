@@ -1,9 +1,14 @@
 #include <iostream>
 
-void PlayGame()
+void PrintIntroduction()
 {
   std::cout << "You are a secret agent breaking into a secure server room...\n";
   std::cout << "You need to enter the correct codes to continue...\n\n";
+}
+
+void PlayGame()
+{
+  PrintIntroduction();
 
   const int CodeA = 4;
   const int CodeB = 3;
